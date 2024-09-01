@@ -89,4 +89,4 @@ COPY --from=extract build/target/extracted/application/ ./
 
 EXPOSE 8082
 
-ENTRYPOINT [ "java", "org.springframework.boot.loader.launch.JarLauncher" ]
+ENTRYPOINT [ "java", "org.springframework.boot.loader.launch.JarLauncher", "-Dspring.datasource.url=jdbc:mysql://mysql-host:3306/bike-station", "-Dspring.datasource.username=root", "-Dspring.datasource.password=root"]

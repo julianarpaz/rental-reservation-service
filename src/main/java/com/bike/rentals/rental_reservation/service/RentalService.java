@@ -3,6 +3,7 @@ package com.bike.rentals.rental_reservation.service;
 import com.bike.rentals.rental_reservation.entity.Rental;
 import com.bike.rentals.rental_reservation.entity.Reservation;
 import com.bike.rentals.rental_reservation.repository.RentalRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -15,7 +16,10 @@ import java.time.Duration;
 @Service
 public class RentalService {
 
+    @Autowired
     private RentalRepository rentalRepository;
+
+    @Autowired
     private ReservationService reservationService;
 
     public Rental startRental(Reservation reservation) {
