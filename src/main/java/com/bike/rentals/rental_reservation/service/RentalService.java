@@ -19,15 +19,11 @@ public class RentalService {
     @Autowired
     private RentalRepository rentalRepository;
 
-    @Autowired
-    private ReservationService reservationService;
-
     public Rental startRental(Reservation reservation) {
         // Lógica para iniciar um aluguel com base na reserva existente
         // TODO Incluir validação e criação do aluguel
 
         Rental rental = new Rental();
-        rental.setId(UUID.randomUUID());
         rental.setReservationId(reservation.getId());
         rental.setUserId(reservation.getUserId());
         rental.setStartTime(LocalDateTime.now());

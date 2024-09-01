@@ -4,6 +4,7 @@ import com.bike.rentals.rental_reservation.entity.Rental;
 import com.bike.rentals.rental_reservation.entity.Reservation;
 import com.bike.rentals.rental_reservation.repository.RentalRepository;
 import com.bike.rentals.rental_reservation.service.RentalService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,10 @@ import java.util.UUID;
 @RequestMapping("/rentals")
 public class RentalController {
 
+    @Autowired
     private RentalService rentalService;
+
+    @Autowired
     private RentalRepository repository;
 
     @PostMapping
