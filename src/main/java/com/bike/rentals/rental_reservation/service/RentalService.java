@@ -26,6 +26,7 @@ public class RentalService {
         Rental rental = new Rental();
         rental.setReservationId(reservation.getId());
         rental.setUserId(reservation.getUserId());
+        rental.setBikeId(reservation.getBikeId());
         rental.setStartTime(LocalDateTime.now());
 
         return rentalRepository.save(rental);
