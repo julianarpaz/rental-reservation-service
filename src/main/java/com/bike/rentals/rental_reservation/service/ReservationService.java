@@ -14,14 +14,12 @@ public class ReservationService {
     private ReservationRepository reservationRepository;
 
     public Reservation createReservation(Reservation reservation) {
-        // Aqui pode ser feita a validação da disponibilidade da bike, regras de negócio, etc.
-        //checar se bike ta disponível!!!
 
         if (reservation.getStartTime() == null) {
             reservation.setStartTime(LocalDateTime.now());
         }
 
-        reservation.setEndTime(reservation.getStartTime().plusMinutes(10)); // Exemplo de tempo limite
+        reservation.setEndTime(reservation.getStartTime().plusMinutes(10));
         return reservationRepository.save(reservation);
     }
 }
